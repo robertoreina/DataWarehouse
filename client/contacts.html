@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/verify-autentication.js" type="module"></script>
+
+</head>
+
+<body class="body-contact">
+    <!--Header  -->
+    <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="./contacts.html">Contactos</a></li>
+                <li><a href="./companies.html">Compañías</a></li>
+                <li id="userLinkNav" class="hide"><a href="./users.html">Usuarios</a></li>
+                <li><a href="./region-cities.html">Región / Ciudad</a></li>
+                <li><i id="btnSignOut" class="fas fa-sign-out-alt tag-hover" data-text="Cerrar sesión"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <Main>
+        <h1>Contactos</h1>
+        <div class="box-search">
+            <div>
+                <input type="search" name="searchContact" id="inputSearch">
+                <i class="fas fa-search"></i>
+            </div>
+            <button id="btn_new_contact" class="primary-button blue">Agregar Contacto</button>
+        </div>
+
+        <div class="tag-check-container hide">
+            <span class="tag_primary" id="selectedRows"></span>
+            <button class="seconday-button"><i class="fas fa-trash-alt"></i>   Eliminar Contactos</button>
+        </div>
+        <table class="contact-table">
+        </table>
+        <div class="paged-container">
+            <span>Filas por página <select class="" id="numberPage_Select" name="numberPageSelect">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                </select> </span>
+            <div> <span>
+                    <p id="rowsPages">1</p> de <p id="totalRows">0</p> filas
+                </span>
+                <i id="slide_left" class="fas fa-chevron-left"></i>
+                <i id="slide_right" class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+    </Main>
+
+    <!-- Edit/create contact Modal -->
+    <div id="cnt_form_contact" class="container-form hide">
+        <div class="box-form-gral">
+            <div class="box-form-a">
+                <h2>Nuevo Contacto</h2>
+                <i class="fas fa-times"></i>
+                <form id="form_contact" class="form-primary" action="#">
+
+                    <div class="box-input">
+                        <label for="inputName">Nombre*</label>
+                        <input class="standar-input" type="text" name="inputName" id="input_name" maxlength="250">
+                        <p id="msg_name_error" class="msg-error-input"></p>
+                    </div>
+                    <div class="box-input">
+                        <label for="inputLastName">Apellido*</label>
+                        <input class="standar-input" type="text" name="inputLastName" id="input_lastName" maxlength="250">
+                        <p id="msg_lastName_error" class="msg-error-input"></p>
+                    </div>
+                    <div class="box-input">
+                        <label for="inputJob">Cargo*</label>
+                        <input class="standar-input" type="text" name="inputJob" id="input_job" maxlength="250">
+                        <p id="msg_job_error" class="msg-error-input"></p>
+                    </div>
+                    <div class="box-input">
+                        <label for="inputEmail">Email*</label>
+                        <input class="standar-input" type="email" name="inputEmail" id="input_email" itemref="msg_email_error" maxlength="250">
+                        <p id="msg_email_error" class="msg-error-input"></p>
+                    </div>
+                    <div class="box-input">
+                        <label for="companySelect">Compañía*</label>
+                        <select class="standar-input" id="company_select" name="companySelect">
+                            <option selected value=""></option>
+                            <option value="1">Amazon</option>
+                            <option value="2">Falabella</option>
+                            <option value="3">Mercado Libre</option>
+                            <option value="4">Latam</option>
+                            <option value="5">Scotiabank</option>
+                        </select>
+                        <p id="msg_company_error" class="msg-error-input"></p>
+                    </div>
+                </form>
+            </div>
+            <form class="form-secundary" action="#">
+
+                <div class="box-input">
+                    <label for="regionSelect">Region*</label>
+                    <select class="standar-input" id="region_select" name="regionSelect">
+                    </select>
+                    <p id="msg_region_error" class="msg-error-input"></p>
+                </div>
+    
+                <div class="box-input">
+                    <label for="countrySelect">Pais*</label>
+                    <select class="standar-input" id="country_select" name="countrySelect">
+                    </select>
+                    <p id="msg_country_error" class="msg-error-input"></p>
+                </div>
+    
+                <div class="box-input">
+                    <label for="citySelect">Ciudad*</label>
+                    <select class="standar-input" id="city_select" name="citySelect">
+                    </select>
+                    <p id="msg_city_error" class="msg-error-input"></p>
+                </div>
+    
+                <div class="box-input">
+                    <label for="inputAddress">Dirección*</label>
+                    <input class="standar-input" type="tel" name="inputAddress" id="input_address" maxlength="250">
+                    <p id="msg_address_error" class="msg-error-input"></p>
+                </div>
+    
+                <div class="box-input">
+                    <label for="interesSelect">Interés</label>
+                    <select class="standar-input" id="interes_select" name="interesSelect">
+                        <option value="0">0%</option>
+                        <option value="25">25%</option>
+                        <option value="50">50%</option>
+                        <option value="75">75%</option>
+                        <option value="100">100%</option>
+                    </select>
+                    <p id="msg_interes_error" class="msg-error-input"></p>
+                </div>
+    
+                <ul>
+                    <li class="new-contact-chanel">
+                        <div class="box-input">
+                            <label for="contactChanelSelect">Canal de contacto</label>
+                            <select class="standar-input" id="contactChanel_select" name="contactChanelSelect">
+                            </select>
+                            <p id="msg_contactChanel_error" class="msg-error-input"></p>
+                        </div>
+                        <div class="box-input">
+                            <label for="userNameAddress">Cuenta de usuario</label>
+                            <input class="standar-input" type="tel" name="inputUserName" id="input_userName" maxlength="250">
+                            <p id="msg_userName_error" class="msg-error-input"></p>
+                        </div>
+                        <div class="box-input">
+                            <label for="preferencesSelect">Preferencias</label>
+                            <select class="standar-input" id="preference_select" name="prefencesSelect">
+                            </select>
+                            <p id="msg_preferences_error" class="msg-error-input"></p>
+                        </div>
+                        <button id="btn_add_contactChanel" class="primary-button blue"> <i class="fas fa-plus"></i>  Agregar Canal</button>
+                    </li>
+                </ul>
+
+                <div class="cnt-buttons orden-button">
+                    <input id="btn_delete_b" class="terciary-button" type="button" value="Eliminar Contacto">
+                    <input id="btn_save" class="primary-button green" type="button" value="Guardar Contacto">
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <!-- delete contact modal -->
+    <div id="modal_delete_contact" class="container-form hide">
+        <div class="modal-message">
+            <img src="./assets/delete-user.png" alt="icon delete company">
+            <p>¿Seguro desea eliminar el contacto?</p>
+            <div class="cnt-buttons">
+                <input id="btn_cancel_dlt" class="terciary-button" type="button" value="Cancelar">
+                <input id="btn_delete" class="primary-button red" type="button" value="Eliminar">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/modules/sign-out.js" type="module"></script>
+    <script src="./js/contact.js" type="module"></script>
+
+</body>
+
+</html>

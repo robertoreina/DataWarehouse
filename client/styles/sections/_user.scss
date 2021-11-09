@@ -1,0 +1,53 @@
+// section user styles
+
+.body-user {
+    position: relative;
+    overflow: hidden;
+}
+
+// container form user and company
+
+.form-user {
+    position: relative;
+    width: 30%;
+    min-width: 500px;
+    border: 1px solid $primaryColor;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 2rem;
+    height: 650px;
+    margin: auto;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    h2 {
+        border-bottom: 1px solid $primaryColor;
+    }
+
+    .cnt-buttons {
+        align-self: center;
+    }
+}
+
+.box-role {
+    display: flex;
+    flex-wrap: wrap;
+    width: 111px;
+    align-items: baseline;
+    label {
+        padding-left: 5px;
+    }
+}

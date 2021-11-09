@@ -1,0 +1,259 @@
+.box-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 49.5px;
+
+    input {
+        width: 502px;
+        height: 41px;
+        outline: none;
+        padding: 0px 10px;
+        border: 1px solid #cccccc;
+        border-radius: 3.5px;
+        border-radius: 3.5px;
+    }
+    i {
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 3.5px;
+        font-size: 16px;
+        padding: 10px 12px 13px 12px;
+        cursor: pointer;
+        color: $primaryColor;
+        &:hover {
+            background-color: $primaryColor;
+            color: white;
+        }
+    }
+}
+
+.contact-table {
+    th {
+        cursor: pointer;
+    }
+
+    tr.rows-selected-background {
+        background-color: $lightBlueColorTwo;
+    }
+
+    .icon-sort {
+        width: 14px;
+    }
+
+    input {
+        background-color: $primaryColor;
+    }
+}
+
+.back-interes-bar {
+    display: inline-block;
+    height: 8px;
+    width: 110px;
+    background-color: $grayColor;
+    border-radius: 4px;
+    position: relative;
+
+    &.interes-red::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        height: 100%;
+        width: 100%;
+        background-color: $redColor;
+    }
+
+    &.interes-orange::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        height: 100%;
+        width: 75%;
+        background-color: $orangeColor;
+    }
+    &.interes-yellow::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        height: 100%;
+        width: 50%;
+        background-color: $yellowColor;
+    }
+
+    &.interes-lightBlue::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 4px;
+        height: 100%;
+        width: 25%;
+        background-color: $lightBluecolor;
+    }
+}
+
+.contact-column {
+    display: flex;
+
+    p {
+        display: inline-block;
+    }
+    img {
+        width: auto;
+        height: 25px;
+        margin-right: 10px;
+    }
+}
+
+.group-text-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.secondary-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.paged-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+
+    select {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    p {
+        display: inline-block;
+    }
+    i {
+        font-size: 15px;
+        margin-left: 30px;
+    }
+    span {
+        margin-right: 20px;
+    }
+}
+
+.tag-check-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    &.hide {
+        display: none;
+    }
+}
+
+// container form contact
+.box-form-gral {
+    position: relative;
+    width: 1124px;
+    background-color: white;
+    // height: 650px;
+    margin: auto;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0;
+        }
+        to {
+            top: 0;
+            opacity: 1;
+        }
+    }
+}
+
+.box-form-a {
+    background-color: $primaryColor;
+    width: 100%;
+    height: 140px;
+    position: relative;
+    padding: 26px 32px;
+
+    h2,
+    i {
+        display: inline-block;
+        color: white;
+    }
+    h2 {
+        width: 98%;
+    }
+}
+
+.form-primary {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    width: 97%;
+    height: 131px;
+    bottom: -62px;
+    left: 18px;
+    background-color: white;
+    border: 3px solid $blueColorTwo;
+    border-radius: 6.5px;
+}
+
+.form-secundary {
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+    padding: 26px 32px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    #interes_select {
+        width: 70px;
+    }
+
+    ul {
+        list-style: none;
+        width: 100%;
+        margin-top: 44px;
+
+        li {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 6px;
+
+            input, button, select{
+                margin-right: 16px;
+            }
+            button{
+                width: max-content;
+                height: 34px;
+                padding: 10px;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .box-input{
+        height: max-content;
+    }
+}
+
+
+.orden-button{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;   
+}
+

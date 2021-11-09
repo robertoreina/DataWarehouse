@@ -1,0 +1,328 @@
+$primaryFont: "Open Sans", sans-serif;
+$primaryColor: #1d72c2;
+$redColor: #DE0028;
+$yellowColor: #FFC700;
+$orangeColor: #FF6F00;
+$lightBluecolor: #1CC1F5;
+$lightBlueColorTwo:rgba(232, 237, 252, 0.9);
+$blueColorTwo: #0683F9;
+$greenColor: #429C41;
+$grayColor: #E8E8E8;
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: $primaryFont;
+    
+}
+
+html {
+    font-size: 15px;
+}
+
+// Header and NavBar
+
+header {
+    background-color: $primaryColor;
+    height: 4rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+
+    img {
+        height: 2rem;
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        width: 40vw;
+        min-width: 500px;
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+            position: relative;
+            width: 120px;
+            text-align: center;
+
+            &:nth-of-type(5n){
+                width: max-content;
+                margin-left: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            .fa-sign-out-alt {
+                cursor: pointer;
+                color: white;
+            }
+        }
+
+        
+
+        li::before {
+            position: absolute;
+            content: " ";
+            height: 5px;
+            background-color: white;
+            left: 0;
+            bottom: -23px;
+            width: 0;
+            transition: width 0.5s ease-in;
+        }
+
+        li:hover::before {
+            width: 100%;
+        }
+
+        li:hover a{
+            font-weight: bold;
+        }
+    }
+}
+
+main {
+    h1,
+    button {
+        margin-bottom: 1.5rem;
+    }
+}
+
+// table
+
+table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    border: 1px solid rgba(0, 0, 0, 0.153);
+
+    th {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.153);
+        text-align: left;
+        font-weight: normal;
+    }
+
+    td,
+    th {
+        height: 2rem;
+        padding: 1rem;
+        font-size: 14px;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    // column more action
+    td:last-child {
+        width: 70px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+
+        &:hover {
+            #btnMoreOption {
+                display: none;
+            }
+
+            .box-more-action {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+// option delete and edit
+.box-more-action {
+    display: none;
+}
+
+
+.hide {
+    display: none;
+}
+
+// section title
+main h1{
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+// main
+main{
+    padding: 2rem;
+}
+
+// primary button
+.primary-button{
+    width: 11.55rem;
+    height: 2.8rem;
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid black;
+
+    &:hover{
+        box-shadow: 1px 1px 1px gray;
+    }
+}
+
+.primary-button.blue{
+    background-color: $primaryColor;
+    i{
+        color:white;
+    }
+}
+.primary-button.red{
+    background-color: $redColor;
+}
+
+.primary-button.green{
+    background-color: $greenColor;
+}
+
+.terciary-button{
+    background-color: transparent;
+    color: #DE0028;
+    font-weight: bold;
+    width: 11.55rem;
+    height: 2.8rem;
+    cursor: pointer;
+    border: 0;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.seconday-button{
+    background-color: transparent;
+    color: $primaryColor;
+    width: 11.55rem;
+    height: max-content;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+
+    &:hover{
+        font-weight: bold;
+    }
+}
+
+// standar input 
+.box-input{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 57px;
+    
+    label{
+        margin-bottom: 5px;
+    }
+}
+
+.standar-input{
+    width: 190px;
+    height: 36px;
+    border: 1px solid #C6CACC;
+    outline: 0;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+// message error on input
+.msg-error-input{
+    color: $redColor;
+    font-style: italic;
+    font-size: 12px;
+}
+
+//modal message
+.modal-message{
+    display: flex;
+    margin: 0 auto;
+    background-color: white;
+    width: 380px;
+    height: 300px;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+
+    img{
+        height: 100px;
+        width: auto;
+    }
+
+    p{
+        width: fit-content;
+    }
+}
+
+// tag hover 
+.tag-hover:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    width: max-content;
+    color: black;
+    font-size: 12px;
+    height: auto;
+    font-weight: normal;
+    font-family: $primaryFont;
+    border: 1px solid gray;
+    background-color: #e8e8e8;
+    padding: 2px;
+    z-index: 1;
+}
+
+//icon
+i{
+    position: relative;
+    color: $primaryColor;
+    cursor: pointer;
+}
+
+
+.tag_primary{
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    color: $blueColorTwo;
+    // background-color: $lightBluecolorTwo;
+    background-color: $lightBlueColorTwo;
+    opacity: 0.9;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+
+.container-form {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 60px;
+}
+
+button:disabled { 
+    background: #E8E8E8 !important;
+    color: white !important;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "data-warehouse",
+  "version": "1.0.0",
+  "description": "Proyecto Data Warehouse",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "data-warehouse",
+    "acamica"
+  ],
+  "author": "Roberto Reina <robertto.e@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mariadb": "^2.5.4",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
+  }
+}

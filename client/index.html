@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datawarehouse</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/verify-autentication.js" type="module"></script>
+
+</head>
+
+<body class="body-login">
+
+    <!-- Login Box -->
+    <div class="box-login">
+        <img src="./assets/logo.svg" class="logo" alt="logo">
+        <form class="form-login" action="">
+            <label for="email">Email:</label>
+            <input type="text" placeholder="Ingrese su email" id="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" placeholder="Ingrese la contraseña" id="password" required>
+            <span id="errorMsg"> </span>
+
+            <button type="submit" id="btnLogin">Ingresar
+            </button>
+        </form>
+    </div>
+
+    <script src="./js/login.js" type="module"></script>
+
+</body>
+
+</html>

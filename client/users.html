@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/verify-autentication.js" type="module"></script>
+
+</head>
+
+<body class="body-user">
+    <!--Header  -->
+    <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="./contacts.html">Contactos</a></li>
+                <li><a href="./companies.html">Compañías</a></li>
+                <li id="userLinkNav" class="hide"><a href="./users.html">Usuarios</a></li>
+                <li><a href="./region-cities.html">Región / Ciudad</a></li>
+                <li><i id="btnSignOut" class="fas fa-sign-out-alt tag-hover" data-text="Cerrar sesión"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Usuarios</h1>
+        
+        <button id="btn_new_user" class="primary-button blue">Agregar Usuario</button>
+        <table></table>
+    </main>
+
+    <!-- Edit/create user Modal -->
+    <div id="cnt_form_user" class="container-form hide">
+        <form id="form_user" class="form-user" action="#">
+
+            <h2></h2>
+            <div class="box-input">
+                <label for="inputEmail">Email</label>
+                <input class="standar-input" type="email" name="inputEmail" id="input_email" itemref="msg_email_error">
+                <p id="msg_email_error" class="msg-error-input"></p>
+            </div>
+            <div class="box-input">
+                <label for="inputName">Nombre</label>
+                <input class="standar-input" type="text" name="inputName" id="input_name">
+                <p id="msg_name_error" class="msg-error-input"></p>
+
+            </div>
+            <div class="box-input">
+                <label for="inputLastName">Apellido</label>
+                <input class="standar-input" type="text" name="inputLastName" id="input_last_name">
+                <p id="msg_lastName_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="box-input">
+                <label for="inputRole">Role</label>
+                <div class="box-role">
+                    <input type="radio" name="inputRole" value="1" id="input_role_admin">
+                    <label for="inputRole">Administrador</label>
+                    <input type="radio" name="inputRole" value="0" id="input_role_user" checked>
+                    <label for="inputRole">Usuario</label>
+                </div>
+            </div>
+
+            <div class="box-input">
+                <label for="inputPassword">Contraseña</label>
+                <input class="standar-input" type="password" name="inputPassword" id="input_password">
+                <p id="msg_password_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="box-input">
+                <label for="inputRepeatPassword">Repetir Contraseña</label>
+                <input class="standar-input" type="password" name="inputRepeatPassword" id="input_repeat_password">
+                <p id="msg_repeatPassword_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="cnt-buttons">
+                <input id="btn_cancelar" class="terciary-button" type="button" value="Cancelar">
+                <input id="btn_save" class="primary-button blue" type="button" value="Guardar">
+            </div>
+        </form>
+
+    </div>
+
+    <!-- delete user modal -->
+    <div id="modal_delete_user" class="container-form hide">
+        <div class="modal-message">
+            <img src="./assets/delete-user.png" alt="icon delete user">    
+            <p>¿Seguro desea eliminar el usuario?</p>
+            <div class="cnt-buttons">
+                <input id="btn_cancel_dlt" class="terciary-button" type="button" value="Cancelar">
+                <input id="btn_delete" class="primary-button red" type="button" value="Eliminar">
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/modules/sign-out.js" type="module"></script>
+    <script src="./js/user.js" type="module"></script>
+</body>
+
+</html>

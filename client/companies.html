@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Companies</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/verify-autentication.js" type="module"></script>
+</head>
+
+<body class="body-company">
+    <!--Header  -->
+    <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="./contacts.html">Contactos</a></li>
+                <li><a href="./companies.html">Compañías</a></li>
+                <li id="userLinkNav" class="hide"><a href="./users.html">Usuarios</a></li>
+                <li><a href="./region-cities.html">Región / Ciudad</a></li>
+                <li><i id="btnSignOut" class="fas fa-sign-out-alt tag-hover" data-text="Cerrar sesión"></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Compañías</h1>
+
+        <button id="btn_new_company" class="primary-button blue">Agregar Compañia</button>
+        <table></table>
+    </main>
+
+    <!-- Edit/create company Modal -->
+    <div id="cnt_form_company" class="container-form hide">
+        <form id="form_company" class="form-user" action="#">
+
+            <h2></h2>
+            <div class="box-input">
+                <label for="inputName">Nombre</label>
+                <input class="standar-input" type="text" name="inputName" id="input_name">
+                <p id="msg_name_error" class="msg-error-input"></p>
+            </div>
+            <div class="box-input">
+                <label for="inputEmail">Email</label>
+                <input class="standar-input" type="email" name="inputEmail" id="input_email" itemref="msg_email_error">
+                <p id="msg_email_error" class="msg-error-input"></p>
+            </div>
+            <div class="box-input">
+                <label for="inputAddress">Direccion</label>
+                <input class="standar-input" type="text" name="inputAddress" id="input_address">
+                <p id="msg_address_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="box-input">
+                <label for="regionSelect">Region</label>
+                <select class="standar-input" id="region_select" name="regionSelect">
+                </select>
+            </div>
+
+            <div class="box-input">
+                <label for="countrySelect">Pais</label>
+                <select class="standar-input" id="country_select" name="countrySelect">
+                </select>
+            </div>
+
+            <div class="box-input">
+                <label for="citySelect">Ciudad</label>
+                <select class="standar-input" id="city_select" name="citySelect">
+                </select>
+                <p id="msg_city_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="box-input">
+                <label for="inputPhone">Telefono</label>
+                <input class="standar-input" type="tel" name="inputPhone" id="input_phone" maxlength="11"
+                    placeholder="Ingrese el Telefono">
+                <p id="msg_phone_error" class="msg-error-input"></p>
+            </div>
+
+            <div class="cnt-buttons">
+                <input id="btn_cancelar" class="terciary-button" type="button" value="Cancelar">
+                <input id="btn_save" class="primary-button blue" type="button" value="Guardar">
+            </div>
+        </form>
+    </div>
+
+    <!-- delete company modal -->
+    <div id="modal_delete_company" class="container-form hide">
+        <div class="modal-message">
+            <img src="./assets/delete-user.png" alt="icon delete company">
+            <p>¿Seguro desea eliminar la Compania?</p>
+            <div class="cnt-buttons">
+                <input id="btn_cancel_dlt" class="terciary-button" type="button" value="Cancelar">
+                <input id="btn_delete" class="primary-button red" type="button" value="Eliminar">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/modules/sign-out.js" type="module"></script>
+    <script src="./js/company.js" type="module"></script>
+
+
+</body>
+
+</html>

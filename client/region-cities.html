@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region / Cities</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./js/verify-autentication.js" type="module"></script>
+
+</head>
+
+<body>
+    <!--Header  -->
+    
+    <header>
+        <img src="./assets/logo.svg" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="./contacts.html">Contactos</a></li>
+                <li><a href="./companies.html">Compañías</a></li>
+                <li id="userLinkNav" class="hide"><a href="./users.html">Usuarios</a></li>
+                <li><a href="./region-cities.html">Región / Ciudad</a></li>
+                <li><i id="btnSignOut" class="fas fa-sign-out-alt tag-hover" data-text="Cerrar sesión"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="region-main">
+
+        <h1>Región / Pais / Ciudad</h1>
+        <button id="btn_new_region" class="primary-button blue">Agregar Region</button>
+
+        <ul id="region_list">
+        </ul>
+
+    </main>
+
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/modules/sign-out.js" type="module"></script>
+    <script src="./js/region-cities.js" type="module"></script>
+
+
+</body>
+
+</html>
